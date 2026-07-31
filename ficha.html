@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grand Eden Sheet</title>
+    <link rel="stylesheet" href="estiloFicha.css">
+</head>
+<body>
+
+<div class="primeiroAviso">
+    <p id="alertaReset" class="alertaReset-on">
+        O primeiro preenchimento da ficha. ATENÇÃO: Deleta todos os dados caso já possua.
+    </p>
+    <button id="lock" class="lock-closed">ꗃ</button>
+    <button class="start" id="start">
+        Iniciar
+    </button>
+</div>
+
+<div class="linha-barra">
+<input class="sumir" type="text" id="barra" placeholder="Atributos">
+</input><p id="porEspaço" class="sumir">Separados por espaço</p>
+</div>
+    <p id="atributo" class="sumir">|FOR|DEX|CON|INT|SAB|CAR|</p>
+    <p id="atributosInvalidos" class="sumir">Atributos inválidos</p>
+<div class="linha-raça">
+<label class="sumir" id="raçaTexto" for="raca">Raça:</label>
+<select class="sumir" id="raçaBarra">
+<option value="noRace">---</option>
+<option value="griseus">Griseus</option>
+<option value="zumi">Zumi</option>
+<option value="ursun">Ursun</option>
+<option value="drakai">Drakai</option>
+<option value="dracenos">Dracenos</option>
+<option value="anuran">Anuran</option>
+<option value="repturra">Repturra</option>
+<option value="halfkin">Halfkin</option>
+<option value="latran">Latran</option>
+<option value="Lunce">Lunce</option>
+<option value="tuskar">Toskano</option>
+</select>
+    <label class="sumir" id="períciasTxt" for="perícias">Perícias:</label>
+    <select class="sumir" id="perícias">
+        <option value="noPerk">---</option>
+        <option value="acrobacia">Acrobacia</option>
+        <option value="arcanismo">Arcanismo</option>
+        <option value="atletismo">Atletismo</option>
+        <option value="atuação">Atuação</option>
+        <option value="enganação">Enganação</option>
+        <option value="furtividade">Furtividade</option>
+        <option value="história">História</option>
+        <option value="intimidação">Intimidação</option>
+        <option value="intuição">Intuição</option>
+    </select>
+    <label class="sumir" id="períciasTxt2" for="perícias2">e</label>
+    <select class="sumir" id="perícias2">
+        <option value="noPerk2">---</option>
+        <option value="investigação">Investigação</option>
+        <option value="adestrar animais">Adestrar animais</option>
+        <option value="medicina">Medicina</option>
+        <option value="natureza">Natureza</option>
+        <option value="percepção">Percepção</option>
+        <option value="persuasão">Persuasão</option>
+        <option value="prestidigitação">Prestidigitação</option>
+        <option value="religião">Religião</option>
+        <option value="sobrevivência">Sobrevivência</option>
+    </select>
+    <p class="sumir" id="raçaOk">OK!</p>
+</div>
+<div class="linhaClasse">
+    <label class="sumir" id="classeTxt" for="classeBarra">Classe:</label>
+    <select class="sumir" id="classeBarra">
+        <option value="noClss">---</option>
+        <option value="tank">Tank</option>
+        <option value="melee">Melee</option>
+        <option value="ranged">Ranged</option>
+        <option value="support">Support</option>
+        <option value="magical">Magical</option>
+    </select>
+    <label class="sumir" id="traçoTxt" for="traçoBarra">Traço heroico:</label>
+    <select class="sumir" id="traçoBarra">
+        <option value="noTrait">---</option>
+        <option value="liderança">Liderança</option>
+        <option value="guardião">Guardião</option>
+        <option value="apóstolo">Apóstolo</option>
+        <option value="comandante">Comandante</option>
+        <option value="santo">Santo</option>
+        <option value="independente">Independente</option>
+        <option value="aventureiro">Aventureiro</option>
+        <option value="certeiro">Certeiro</option>
+    </select>
+    <p class="sumir" id="classeOk">Show!</p>
+</div>
+<div class="AlinhaMento">
+    <label class="sumir" id="alinhamentoTxt" for="alinhamentoBarra">Alinhamento:</label>
+    <select class="sumir" id="alinhamentoBarra">
+        <option value="noAlign">---</option>
+        <option value="ordeiro bom">Ordeiro bom</option>
+        <option value="ordeiro">Ordeiro</option>
+        <option value="ordeiro mau">Ordeiro mau</option>
+        <option value="neutro bom">Neutro bom</option>
+        <option value="neutro">Neutro</option>
+        <option value="neutro mau">Neutro mau</option>
+        <option value="caótico bom">Caótico bom</option>
+        <option value="caótico">Caótico</option>
+        <option value="caótico mau">Caótico mau</option>
+    </select>
+    <label class="sumir" id="originTxt" for="originBarra">Origem:</label>
+    <select class="sumir" id="originBarra">
+        <option value="noOrigin">---</option>
+        <option value="acólito">Acólito</option>
+        <option value="assombrado">Assombrado</option>
+        <option value="artesão">Artesão</option>
+        <option value="artista">Artista</option>
+        <option value="charlatão">Charlatão</option>
+        <option value="criminoso">Criminoso</option>
+        <option value="eremita">Eremita</option>
+        <option value="forasteiro">Forasteiro</option>
+        <option value="herói do povo">Herói do povo</option>
+        <option value="marinheiro">Marinheiro</option>
+        <option value="nobre">Nobre</option>
+        <option value="órfão">Orfão</option>
+        <option value="sábio">Sábio</option>
+        <option value="soldado">Soldado</option>
+        <option value="viajante">Viajante</option>
+    </select>
+    <p class="sumir" id="originOk">META!</p>
+</div>
+<div class="linha-nome">
+<label class="sumir" id="inserirNomeTxt" for="inserirNome">Jogador:</label>
+<input class="sumir" type="text" id="inserirNome" placeholder="Nome">
+</div>
+
+    <script>
+        // OBJETOS GLOBAIS
+        let atributosBase = {
+            FOR: 0,
+            DEX: 0,
+            CON: 0,
+            INT: 0,
+            SAB: 0,
+            CAR: 0
+        };
+
+        // DECLARAÇÕES GLOBAIS
+        const lock = document.getElementById("lock");
+        const alertaReset = document.getElementById("alertaReset");
+        const start = document.getElementById("start");
+
+        const barra = document.getElementById("barra");
+        const atributo = document.getElementById("atributo");
+        const atributosInvalidos = document.getElementById("atributosInvalidos");
+        const porEspaço = document.getElementById("porEspaço");
+
+        const raçaTexto = document.getElementById("raçaTexto");
+        const raçaBarra = document.getElementById("raçaBarra");
+        const raçaOk = document.getElementById("raçaOk");
+
+        const períciasTxt = document.getElementById("períciasTxt");
+        const períciasTxt2 = document.getElementById("períciasTxt2");
+        const perícias = document.getElementById("perícias");
+        const perícias2 = document.getElementById("perícias2");
+
+        const classeTxt = document.getElementById("classeTxt");
+        const classeBarra = document.getElementById("classeBarra");
+        const traçoBarra = document.getElementById("traçoBarra");
+        const traçoTxt = document.getElementById("traçoTxt");
+        const classeOk = document.getElementById("classeOk");
+
+        const originBarra = document.getElementById("originBarra");
+        const originTxt = document.getElementById("originTxt");
+        const alinhamentoBarra = document.getElementById("alinhamentoBarra");
+        const alinhamentoTxt = document.getElementById("alinhamentoTxt");
+        const originOk = document.getElementById("originOk");
+
+        const inserirNome = document.getElementById("inserirNome");
+        const inserirNomeTxt = document.getElementById("inserirNomeTxt");
+
+        lock.addEventListener("click", function () {
+            if (this.classList.contains("lock-closed")) {
+                this.classList.replace("lock-closed", "lock-open");
+                } else { this.classList.replace("lock-open", "lock-closed");}
+            });
+// BOTÃO LOCK
+    start.addEventListener("click", () => {
+        if (lock.classList.contains("lock-open")) {
+            alertaReset.classList.replace("alertaReset-on", "sumir")
+            barra.classList.replace("sumir", "barra")
+            atributo.classList.replace("sumir", "avisoAtributos")
+            start.classList.replace("start", "sumir")
+            porEspaço.classList.replace("sumir", "avisoEspaço")
+        } else {}
+    });
+// PROCESSAMENTO DOS ATRIBUTOS
+        barra.addEventListener("keypress", function(e) {
+            if (e.key !== "Enter") return;
+
+                const entrada = barra.value.trim();
+                if (!entrada) return;
+
+                const numerosCortados = entrada.split(/\s+/); ///\s+
+
+                if (numerosCortados.length !==6) {
+                    atributosInvalidos.classList.remove("sumir");
+                    atributosInvalidos.classList.add("atributosInvalidos");
+                    //alert("Diferente de 6")
+                    return
+                }
+            const numeroAtributos = numerosCortados.map(Number);
+            const numerosCortadosInvalido = numeroAtributos.some(n => isNaN(n) || n <= 0 || n >= 7);
+            if (numerosCortadosInvalido) {
+                atributosInvalidos.classList.remove("sumir");
+                atributosInvalidos.classList.add("atributosInvalidos");
+                //alert("Maior que 7?")
+                return;
+                }
+
+            atributosInvalidos.classList.remove("atributosInvalidos");
+            atributosInvalidos.classList.add("sumir");
+
+            atributosBase.FOR = numeroAtributos[0];
+            atributosBase.DEX = numeroAtributos[1];
+            atributosBase.CON = numeroAtributos[2];
+            atributosBase.INT = numeroAtributos[3];
+            atributosBase.SAB = numeroAtributos[4];
+            atributosBase.CAR = numeroAtributos[5];
+
+            barra.value = "";
+
+            atributo.textContent = `FOR:${atributosBase.FOR}|DEX:${atributosBase.DEX}|CON:${atributosBase.CON}|INT:${atributosBase.INT}|SAB:${atributosBase.SAB}|CAR:${atributosBase.CAR}`
+
+            porEspaço.textContent = "Concluído"
+            porEspaço.classList.replace("avisoEspaço", "avisoEspaço-verde")
+            raçaBarra.classList.replace("sumir", "raçaBarra");
+            raçaTexto.classList.replace("sumir", "raçaTexto");
+            perícias.classList.replace("sumir", "períciasBarra");
+            períciasTxt.classList.replace("sumir", "períciasTexto");
+            perícias2.classList.replace("sumir", "períciasBarra");
+            períciasTxt2.classList.replace("sumir", "períciasTexto");
+
+            });
+        function verificarPreenchimento() {
+            if (raçaBarra.value !== "noRace" && perícias.value !== "noPerk" && perícias2.value !== "noPerk2") {
+                raçaOk.classList.replace("sumir", "ok");
+                classeBarra.classList.replace("sumir", "classeBarra")
+                classeTxt.classList.replace("sumir", "classeTxt")
+                traçoTxt.classList.replace("sumir", "traçoTxt")
+                traçoBarra.classList.replace("sumir", "traçoTxt")
+            }
+        }
+        function verificarPreenchiemento2() {
+            if (traçoBarra.value !== "noTrait" && classeBarra.value !== "noClass") {
+                classeOk.classList.replace("sumir", "ok");
+                originBarra.classList.replace("sumir", "linha-origem");
+                originTxt.classList.replace("sumir", "linha-origem");
+                alinhamentoBarra.classList.replace("sumir", "linha-origem");
+                alinhamentoTxt.classList.replace("sumir", "linha-origem");
+            }
+        }
+        function verificarPreenchimento3() {
+            if (alinhamentoBarra.value !== "noAlign" && originBarra.value !== "noOrigin") {
+                originOk.classList.replace("sumir", "ok");
+                inserirNome.classList.replace("sumir", "nomeBarra");
+                inserirNomeTxt.classList.replace("sumir", "nomeTxt");
+            }
+        }
+
+        // VERIFICAÇÃO DE 3 ETAPAS
+        raçaBarra.addEventListener("change", verificarPreenchimento);
+        perícias.addEventListener("change", verificarPreenchimento);
+        perícias2.addEventListener("change", verificarPreenchimento);
+
+        classeBarra.addEventListener("change", verificarPreenchiemento2);
+        traçoBarra.addEventListener("change", verificarPreenchiemento2);
+
+        originBarra.addEventListener("change", verificarPreenchimento3);
+        alinhamentoBarra.addEventListener("change", verificarPreenchimento3);
+
+</script>
+</body>
+</html>

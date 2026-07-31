@@ -1,0 +1,127 @@
+
+.primeiroAviso {
+    display: flex;
+    flex-direction: column;
+}
+.linha-barra {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+.linha-raça {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+.linhaClasse {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+.AlinhaMento {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+.linha-origem {
+
+}
+linha-nome {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+.barra {
+    height: 20px;
+    width: 100px;
+    order: 0;
+    display: flex;
+    margin-top: 1px;
+    margin-bottom: 0px;
+}
+.atributosInvalidos {
+    color: indianred;
+}
+button {
+    background: #ffd9a1;
+    border-color: yellow;
+}
+.start {
+    background: #ffd9a1;
+    border-color: yellow;
+    display: flex;
+    flex-direction: column;
+    order: 0;
+    width: 60px;
+    margin-bottom: 8px;
+}
+.lock-closed {
+    background: #ff7070;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.lock-open {
+    background: #b5ff9e;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.avisoAtributos {
+    font-weight: bold;
+    gap: 0px;
+    margin: 0px;
+}
+.avisoEspaço {
+    font-size: small;
+}
+.avisoEspaço-verde {
+    font-size: small;
+    color: green;
+}
+.alertaReset-on {}
+.sumir {
+    display: none;
+}
+.raçaBarra {
+    margin-top: 0px;
+    gap: 0px;
+}
+.raçaTexto {
+    margin: 0px;
+    gap 0px;
+}
+.períciasBarra {
+    margin-top: 0px;
+    gap: 0px;
+}
+.períciasTexto {
+    margin: 0px;
+    gap 0px;
+}
+.ok {
+    font-size: small;
+    color: green;
+}
+.classeTxt {
+
+}
+.traçoTxt {
+
+}
+.nomeTxt {
+
+}
+.nomeBarra {
+    height: 20px;
+    width: 300px;
+}
