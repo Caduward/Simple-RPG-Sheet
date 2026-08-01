@@ -7,22 +7,16 @@
 </head>
 <body>
 
-<div class="primeiroAviso">
-    <p id="alertaReset" class="alertaReset-on">
-        O primeiro preenchimento da ficha. ATENÇÃO: Deleta todos os dados caso já possua.
-    </p>
     <button id="lock" class="lock-closed">ꗃ</button>
-    <button class="start" id="start">
-        Iniciar
-    </button>
-</div>
 
 <div class="linha-barra">
 <input class="sumir" type="text" id="barra" placeholder="Atributos">
 </input><p id="porEspaço" class="sumir">Separados por espaço</p>
 </div>
+
     <p id="atributo" class="sumir">|FOR|DEX|CON|INT|SAB|CAR|</p>
     <p id="atributosInvalidos" class="sumir">Atributos inválidos</p>
+
 <div class="linha-raça">
 <label class="sumir" id="raçaTexto" for="raca">Raça:</label>
 <select class="sumir" id="raçaBarra">
@@ -67,6 +61,7 @@
     </select>
     <p class="sumir" id="raçaOk">OK!</p>
 </div>
+
 <div class="linhaClasse">
     <label class="sumir" id="classeTxt" for="classeBarra">Classe:</label>
     <select class="sumir" id="classeBarra">
@@ -133,13 +128,20 @@
 
     <script>
         // OBJECTS
-        let atributosBase = {
+        let Player = {
             FOR: 0,
             DEX: 0,
             CON: 0,
             INT: 0,
             SAB: 0,
-            CAR: 0
+            CAR: 0,
+            NAME: "",
+            CLASS: "",
+            ALIGNMENT: "",
+            PERK: "",
+            PERK2: "",
+            TRAIT: "",
+            ORIGIN: ""
         };
 
         // DECLARATIONS
@@ -181,15 +183,17 @@
                 this.classList.replace("lock-closed", "lock-open");
                 } else { this.classList.replace("lock-open", "lock-closed");}
             });
-// BOTÃO LOCK
-    start.addEventListener("click", () => {
+
+    lock.addEventListener("click", () => {
         if (lock.classList.contains("lock-open")) {
-            alertaReset.classList.replace("alertaReset-on", "sumir")
             barra.classList.replace("sumir", "barra")
-            atributo.classList.replace("sumir", "avisoAtributos")
-            start.classList.replace("start", "sumir")
-            porEspaço.classList.replace("sumir", "avisoEspaço")
-        } else {}
+            atributo.classList.replace("sumir", "attrExample")
+            porEspaço.classList.replace("sumir", "noMarginTxt")
+          } else {
+            barra.classList.replace("barra", "sumir")
+            atributo.classList.replace("avisoAtributos", "sumir")
+            porEspaço.classList.replace("avisoEspaço", "sumir")
+        }
     });
 // PROCESSAMENTO DOS ATRIBUTOS
         barra.addEventListener("keypress", function(e) {
@@ -216,19 +220,19 @@
             atributosInvalidos.classList.remove("atributosInvalidos");
             atributosInvalidos.classList.add("sumir");
 
-            atributosBase.FOR = numeroAtributos[0];
-            atributosBase.DEX = numeroAtributos[1];
-            atributosBase.CON = numeroAtributos[2];
-            atributosBase.INT = numeroAtributos[3];
-            atributosBase.SAB = numeroAtributos[4];
-            atributosBase.CAR = numeroAtributos[5];
+            Player.FOR = numeroAtributos[0];
+            Player.DEX = numeroAtributos[1];
+            Player.CON = numeroAtributos[2];
+            Player.INT = numeroAtributos[3];
+            Player.SAB = numeroAtributos[4];
+            Player.CAR = numeroAtributos[5];
 
             barra.value = "";
 
-            atributo.textContent = `FOR:${atributosBase.FOR}|DEX:${atributosBase.DEX}|CON:${atributosBase.CON}|INT:${atributosBase.INT}|SAB:${atributosBase.SAB}|CAR:${atributosBase.CAR}`
+            atributo.textContent = `FOR:${Player.FOR}|DEX:${Player.DEX}|CON:${Player.CON}|INT:${Player.INT}|SAB:${Player.SAB}|CAR:${Player.CAR}`
 
             porEspaço.textContent = "Concluído"
-            porEspaço.classList.replace("avisoEspaço", "ok")
+            porEspaço.classList.replace("noMarginTxt", "ok")
             raçaBarra.classList.replace("sumir", "raçaBarra");
             raçaTexto.classList.replace("sumir", "raçaTexto");
             perícias.classList.replace("sumir", "períciasBarra");
@@ -263,7 +267,6 @@
             }
         }
 
-        // VERIFICAÇÃO DE 3 ETAPAS
         raçaBarra.addEventListener("change", verificarPreenchimento);
         perícias.addEventListener("change", verificarPreenchimento);
         perícias2.addEventListener("change", verificarPreenchimento);
@@ -273,6 +276,12 @@
 
         originBarra.addEventListener("change", verificarPreenchimento3);
         alinhamentoBarra.addEventListener("change", verificarPreenchimento3);
+
+        inserirNome.addEventListener("keypress", function (e) {
+            if (e.key !== "Enter") return;
+            Player.NAME = inserirNome.value.trim();
+            inserirNome.value = "";
+        });
 
 </script>
 </body>
