@@ -70,7 +70,7 @@
 <div class="linhaClasse">
     <label class="sumir" id="classeTxt" for="classeBarra">Classe:</label>
     <select class="sumir" id="classeBarra">
-        <option value="noClss">---</option>
+        <option value="noClass">---</option>
         <option value="tank">Tank</option>
         <option value="melee">Melee</option>
         <option value="ranged">Ranged</option>
@@ -132,7 +132,7 @@
 </div>
 
     <script>
-        // OBJETOS GLOBAIS
+        // OBJECTS
         let atributosBase = {
             FOR: 0,
             DEX: 0,
@@ -142,7 +142,7 @@
             CAR: 0
         };
 
-        // DECLARAÇÕES GLOBAIS
+        // DECLARATIONS
         const lock = document.getElementById("lock");
         const alertaReset = document.getElementById("alertaReset");
         const start = document.getElementById("start");
@@ -198,12 +198,11 @@
                 const entrada = barra.value.trim();
                 if (!entrada) return;
 
-                const numerosCortados = entrada.split(/\s+/); ///\s+
+                const numerosCortados = entrada.split(/\s+/);
 
                 if (numerosCortados.length !==6) {
                     atributosInvalidos.classList.remove("sumir");
                     atributosInvalidos.classList.add("atributosInvalidos");
-                    //alert("Diferente de 6")
                     return
                 }
             const numeroAtributos = numerosCortados.map(Number);
@@ -211,7 +210,6 @@
             if (numerosCortadosInvalido) {
                 atributosInvalidos.classList.remove("sumir");
                 atributosInvalidos.classList.add("atributosInvalidos");
-                //alert("Maior que 7?")
                 return;
                 }
 
