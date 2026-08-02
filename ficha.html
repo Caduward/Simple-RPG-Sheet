@@ -9,17 +9,17 @@
 
     <button id="lock" class="lock-closed">ꗃ</button>
 
-<div class="linha-barra">
-<input class="sumir" type="text" id="barra" placeholder="Atributos">
-</input><p id="porEspaço" class="sumir">Separados por espaço</p>
+<div class="DEFAULT-LINE">
+<input class="sumir" type="text" id="attrBar" placeholder="Atributos">
+</input><p id="whiteSpace" class="sumir">Separados por espaço</p>
 </div>
 
-    <p id="atributo" class="sumir">|FOR|DEX|CON|INT|SAB|CAR|</p>
+    <p id="attrExample" class="sumir">|FOR|DEX|CON|INT|SAB|CAR|</p>
     <p id="atributosInvalidos" class="sumir">Atributos inválidos</p>
 
-<div class="linha-raça">
-<label class="sumir" id="raçaTexto" for="raca">Raça:</label>
-<select class="sumir" id="raçaBarra">
+<div class="DEFAULT-LINE">
+<label class="sumir" id="raçaTexto" for="raceBar">Raça:</label>
+<select class="sumir" id="raceBar">
 <option value="noRace">---</option>
 <option value="griseus">Griseus</option>
 <option value="zumi">Zumi</option>
@@ -62,7 +62,7 @@
     <p class="sumir" id="raçaOk">OK!</p>
 </div>
 
-<div class="linhaClasse">
+<div class="DEFAULT-LINE">
     <label class="sumir" id="classeTxt" for="classeBarra">Classe:</label>
     <select class="sumir" id="classeBarra">
         <option value="noClass">---</option>
@@ -86,7 +86,7 @@
     </select>
     <p class="sumir" id="classeOk">Show!</p>
 </div>
-<div class="AlinhaMento">
+<div class="DEFAULT-LINE">
     <label class="sumir" id="alinhamentoTxt" for="alinhamentoBarra">Alinhamento:</label>
     <select class="sumir" id="alinhamentoBarra">
         <option value="noAlign">---</option>
@@ -121,7 +121,7 @@
     </select>
     <p class="sumir" id="originOk">META!</p>
 </div>
-<div class="linha-nome">
+<div class="DEFAULT-LINE">
 <label class="sumir" id="inserirNomeTxt" for="inserirNome">Jogador:</label>
 <input class="sumir" type="text" id="inserirNome" placeholder="Nome">
 </div>
@@ -146,16 +146,14 @@
 
         // DECLARATIONS
         const lock = document.getElementById("lock");
-        const alertaReset = document.getElementById("alertaReset");
-        const start = document.getElementById("start");
 
-        const barra = document.getElementById("barra");
-        const atributo = document.getElementById("atributo");
+        const attrBar = document.getElementById("attrBar");
+        const attrExample = document.getElementById("attrExample");
         const atributosInvalidos = document.getElementById("atributosInvalidos");
-        const porEspaço = document.getElementById("porEspaço");
+        const whiteSpace = document.getElementById("whiteSpace");
 
         const raçaTexto = document.getElementById("raçaTexto");
-        const raçaBarra = document.getElementById("raçaBarra");
+        const raceBar = document.getElementById("raceBar");
         const raçaOk = document.getElementById("raçaOk");
 
         const períciasTxt = document.getElementById("períciasTxt");
@@ -186,34 +184,32 @@
 
     lock.addEventListener("click", () => {
         if (lock.classList.contains("lock-open")) {
-            barra.classList.replace("sumir", "barra")
-            atributo.classList.replace("sumir", "attrExample")
-            porEspaço.classList.replace("sumir", "noMarginTxt")
+            attrBar.classList.replace("sumir", "attrBar")
+            attrExample.classList.replace("sumir", "attrExample")
+            whiteSpace.classList.replace("sumir", "noMarginTxt")
           } else {
-            barra.classList.replace("barra", "sumir")
-            atributo.classList.replace("avisoAtributos", "sumir")
-            porEspaço.classList.replace("avisoEspaço", "sumir")
+            attrBar.classList.replace("attrBar", "sumir")
+            attrExample.classList.replace("attrExample", "sumir")
+            whiteSpace.classList.replace("noMarginTxt", "sumir")
         }
     });
 // PROCESSAMENTO DOS ATRIBUTOS
-        barra.addEventListener("keypress", function(e) {
+        attrBar.addEventListener("keypress", function(e) {
             if (e.key !== "Enter") return;
 
-                const entrada = barra.value.trim();
+                const entrada = attrBar.value.trim();
                 if (!entrada) return;
 
                 const numerosCortados = entrada.split(/\s+/);
 
                 if (numerosCortados.length !==6) {
-                    atributosInvalidos.classList.remove("sumir");
-                    atributosInvalidos.classList.add("atributosInvalidos");
+                    atributosInvalidos.classList.replace("sumir", "atributosInvalidos");
                     return
                 }
             const numeroAtributos = numerosCortados.map(Number);
             const numerosCortadosInvalido = numeroAtributos.some(n => isNaN(n) || n <= 0 || n >= 7);
             if (numerosCortadosInvalido) {
-                atributosInvalidos.classList.remove("sumir");
-                atributosInvalidos.classList.add("atributosInvalidos");
+                atributosInvalidos.classList.replace("sumir", "atributosInvalidos");
                 return;
                 }
 
@@ -227,22 +223,22 @@
             Player.SAB = numeroAtributos[4];
             Player.CAR = numeroAtributos[5];
 
-            barra.value = "";
+            attrBar.value = "";
 
-            atributo.textContent = `FOR:${Player.FOR}|DEX:${Player.DEX}|CON:${Player.CON}|INT:${Player.INT}|SAB:${Player.SAB}|CAR:${Player.CAR}`
+            attrExample.textContent = `FOR:${Player.FOR}|DEX:${Player.DEX}|CON:${Player.CON}|INT:${Player.INT}|SAB:${Player.SAB}|CAR:${Player.CAR}`
 
-            porEspaço.textContent = "Concluído"
-            porEspaço.classList.replace("noMarginTxt", "ok")
-            raçaBarra.classList.replace("sumir", "raçaBarra");
+            whiteSpace.textContent = "Concluído"
+            whiteSpace.classList.replace("noMarginTxt", "ok")
+            raceBar.classList.replace("sumir", "defaultBar");
             raçaTexto.classList.replace("sumir", "raçaTexto");
             perícias.classList.replace("sumir", "períciasBarra");
             períciasTxt.classList.replace("sumir", "períciasTexto");
             perícias2.classList.replace("sumir", "períciasBarra");
             períciasTxt2.classList.replace("sumir", "períciasTexto");
-
             });
+
         function verificarPreenchimento() {
-            if (raçaBarra.value !== "noRace" && perícias.value !== "noPerk" && perícias2.value !== "noPerk2") {
+            if (raceBar.value !== "noRace" && perícias.value !== "noPerk" && perícias2.value !== "noPerk2") {
                 raçaOk.classList.replace("sumir", "ok");
                 classeBarra.classList.replace("sumir", "classeBarra")
                 classeTxt.classList.replace("sumir", "classeTxt")
@@ -267,7 +263,7 @@
             }
         }
 
-        raçaBarra.addEventListener("change", verificarPreenchimento);
+        raceBar.addEventListener("change", verificarPreenchimento);
         perícias.addEventListener("change", verificarPreenchimento);
         perícias2.addEventListener("change", verificarPreenchimento);
 

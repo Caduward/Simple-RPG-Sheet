@@ -1,39 +1,12 @@
-.linha-barra {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 20px;
-}
-.linha-raça {
+.DEFAULT-LINE {
     display: flex;
     align-items: center;
     align-content: center;
     gap: 10px;
-    margin: 10px;
-}
-.linhaClasse {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 10px;
-    margin: 10px;
-}
-.AlinhaMento {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 5px;
-    margin: 12px;
+    margin: 15px;
 }
 .linha-origem {
 
-}
-linha-nome {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 10px;
-    margin: 20px;
 }
 .defaulTxt {
 
@@ -43,7 +16,7 @@ linha-nome {
     margin: 0px;
     gap: 0px;
 }
-.barra {
+.attrBar {
     height: 20px;
     width: 100px;
     order: 0;
@@ -53,10 +26,6 @@ linha-nome {
 }
 .atributosInvalidos {
     color: indianred;
-}
-button {
-    background: #ffd9a1;
-    border-color: yellow;
 }
 .lock-closed {
     background: #ff7070;
@@ -79,7 +48,7 @@ button {
 .sumir {
     display: none;
 }
-.raçaBarra {
+.defaultBar {
     margin-top: 0px;
     gap: 0px;
 }
